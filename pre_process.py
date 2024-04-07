@@ -41,8 +41,8 @@ def prepare_dataset(M: int, K: int, random_state=0, data_dir='data/BHSig260/Beng
 
     random.seed(random_state)
     signers = list(range(1, K+1))
-    num_genuine_sign = 10
-    num_forged_sign = 10
+    num_genuine_sign = 15
+    num_forged_sign = 15
 
     train_signers, test_signers = train_test_split(signers, test_size=K-M)
     pair_genuine_genuine = list(itertools.combinations(range(1, num_genuine_sign+1), 2))

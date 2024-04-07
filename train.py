@@ -84,7 +84,7 @@ if __name__=='__main__':
         transforms.Resize((155, 220)),
         ImageOps.invert,
         transforms.ToTensor(),
-        # TODO: add normalize
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
 
     trainloader = get_data_loader(is_train=True, batch_size=args.batch_size, image_transform=image_transform, dataset=args.dataset)

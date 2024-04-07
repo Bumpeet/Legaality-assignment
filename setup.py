@@ -37,13 +37,13 @@ def main(src_path: Path, dest_path: Path):
           split = stem.split('_')
           num = int(split[2])
           if split[0]=='forgeries':
-            if num<=10:
+            if num<=15:
               img_path.rename(img_path.parent.joinpath(f'{i+1}-F-{num:02d}.tif'))
             else:
               img_path.unlink()
 
           else:
-            if num<=10:
+            if num<=15:
               img_path.rename(img_path.parent.joinpath(f'{i+1}-G-{num:02d}.tif'))
             else:
               img_path.unlink()
@@ -56,12 +56,12 @@ def main(src_path: Path, dest_path: Path):
           split = stem.split('-')
           num = int(split[4])
           if split[3]=='F':
-            if int(split[4])<=10:
+            if int(split[4])<=15:
               img_path.rename(img_path.parent.joinpath(f'{i+1}-F-{num:02d}.tif'))
             else:
               img_path.unlink()
           else:
-            if int(split[4])<=10:
+            if int(split[4])<=15:
               img_path.rename(img_path.parent.joinpath(f'{i+1}-G-{num:02d}.tif'))
             else:
               img_path.unlink()
